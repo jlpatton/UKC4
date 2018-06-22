@@ -1,0 +1,121 @@
+<div class="card text-dark mb-3">
+    <div class="card-header text-dark" role="tab" id="heading1">
+        <h3>Thank you again for your generous donation to the UnknownChild Foundation, giving voice to the thousands of children lost to us in the Holocaust.</h3>
+        <br>
+        <p>We would like to give you the oportunity to honor someone with your donation. Please enter their name and any contact information you may have for this individual or their relatives and we will mail them a card informing them of your thoughtful donation made in honor of them or thier loved one.</p>
+    </div>
+
+    <div class="form-container d-flex text-left justify-content-center p-2">
+        <form action="/completion" method="post" id="payment-form" class="needs-validation" novalidate>
+            {{!-- <div class="form-row"> --}}
+            <div class="form-group">
+                <label for="inputEmail4">Email</label>
+                <input type="email" class="form-control" id="inputEmail4" name="email" placeholder="Honoree's Email">
+                <div class="invalid-feedback">
+                    Please enter a vaild email.
+                </div>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputTitle">Title</label>
+                <select id="inputTitle" class="form-control" name="title">
+                <option value="">Choose...</option>
+                <option value="Mr">Mr</option>
+                <option value="Miss">Miss</option>
+                <option value="Mrs">Mrs</option>
+                <option value="Ms">Mrs</option>
+                <option value="Mr and Mrs">Mr and Mrs</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="inputName">Name</label>
+                <input type="text" class="form-control" id="inputName" name="name" placeholder="Name" required>
+            <div class="invalid-feedback">
+                Please enter the name.
+            </div>
+            </div>
+            <div class="form-group">
+                <label for="inputAddress">Address</label>
+                <input type="text" class="form-control" id="inputAddress" name="address1" placeholder="1234 Main St">
+            </div>
+            <div class="form-group">
+                <label for="inputAddress2">Address 2</label>
+                <input type="text" class="form-control" id="inputAddress2" name="address2" placeholder="Apartment, studio, or floor">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputCity">City</label>
+                    <input type="text" class="form-control" name="city" id="inputCity">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputState">State</label>
+                    <select id="inputState" class="form-control" name="state">
+                    <option value="">Choose...</option>
+                    <option value="1">...</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputZip">Zip</label>
+                    <input type="text" class="form-control" name="zip" id="inputZip">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-row m-auto">
+                        <div class="form-group col-md-8 mb-0">
+                            <p>Is the honoree deceased?</p>
+                        </div>
+                    {{!-- </div>
+                    <div class="form-row"> --}}
+                        <label class="radio-inline mr-2 mt-0">
+                        <input type="radio" name="deceasedRadioGroup" id="radio1" value="true">Yes
+                        </label>
+                        <label class="radio-inline">
+                        <input type="radio" name="deceasedRadioGroup" id="radio2" value="false" checked>No
+                        </label>
+                    </div>
+                    <div class="form-row m-auto">
+                        <div class="form-group col-md-8 mb-0">
+                            <p>Do you wish to make this donation anonymously?</p>
+                        </div>
+                    {{!-- </div>
+                    <div class="form-row"> --}}
+                        <label class="radio-inline mr-2">
+                        <input type="radio" name="anonymousRadioGroup" id="radio3" value="true">Yes
+                        </label>
+                        <label class="radio-inline mb-0">
+                        <input type="radio" name="anonymousRadioGroup" id="radio4" value="false" checked>No
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <button class="btn my-3 btn-primary">Submit Honoree</button>
+            
+        </form>
+    </div>
+
+</div>
+
+<script>
+
+$(document).ready(function(){
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+    'use strict';
+    window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+        }, false);
+        });
+    }, false);
+    })();
+})
+
+</script>

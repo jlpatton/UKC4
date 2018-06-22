@@ -1,0 +1,10 @@
+<h1>Children's page</h1>
+{{#each childs}}
+    <card class="card-body">
+        <h5>{{lastName}}, {{firstName}}</h5>   <p>age: {{age}}, {{gender}}  Home: {{town}}, {{country}}</p>
+    </card>
+{{else}}
+    <p>No children listed</p>
+{{/each}}
+
+<a href="./memorial"><button class="btn my-3 btn-primary">Continue...</button></a>

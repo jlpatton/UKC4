@@ -1,0 +1,215 @@
+/*
+.test1 {
+    padding-bottom: 4px;
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+}
+*/
+.container {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.ukc-nav {
+  font-size: 16px;
+  background: #f4f4f4de;
+  text-transform: uppercase;
+  font-family: 'Raleway', sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.ukc-nav a {
+  color: #8e8e8e;
+}
+
+.card-header a {
+  font-family: 'Raleway', sans-serif;
+  color: #fff;
+}
+
+/* a {
+  color: #fff;
+} */
+
+.ukc-nav a:active {
+  background: #d4d4d4;
+  font-weight: bolder;
+  color: #484848 !important;
+ }
+
+.nav-link:active {
+  background: #d4d4d4;
+}
+
+.ukc-nav a:hover{
+  background: #d4d4d4;
+  color: #484848;
+ }
+  
+.card-body {
+  background-color: #ebe8e8;
+  color: #555;
+}
+
+.card-body h2,.card-body h3 {
+  padding: 0 0;
+}
+
+.toggleInform {
+  visibility: hidden;
+}
+
+/* .dntInform {
+  visibility: hidden;
+} */
+
+.ukc-nav a.dropdown-item {
+  font-weight: normal;
+  background: #e0e0e0;
+  text-transform: capitalize;
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px; }
+
+.dropdown-menu {
+  padding: 0;
+  border: none; }
+
+.ukc-nav a .dropdown-item:hover {
+  background: #e0e0e0;
+  color: #484848;
+}
+
+.dropdown:hover {
+  background: #e0e0e0 }
+
+.dropdown:hover > .dropdown-menu {
+  background: #e0e0e0;
+  display: block;
+  margin-top: 0; }
+
+.dropdown > .dropdown-toggle:active {
+  /*Without this, clicking will make it sticky*/
+  pointer-events: none; }
+
+#banner {
+  background-image: url('/img/boy-in-sunset.jpg');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  padding: 0;
+  background-position: 80% center;
+  object-fit: none;
+  object-position: 85% 90%;
+  width: 100%;
+  min-height: 380px; }
+
+#site-header {
+  background-image: url('/img/1459208452.png');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  padding: 0;
+  background-position: center;
+  object-fit: none;
+  width: 100%;
+  min-height: 260px; }
+
+.center-cropped {
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+  color: #fff; }
+
+.no-padding {
+  padding-left: 0;
+  padding-right: 0; }
+
+.hideit {
+  display: none;
+}
+
+/* Core Styles */
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  /* font-size: 1.1em; */
+  font-size: 15px;
+  line-height: 1.5;
+  text-align: center;
+  color: #555;
+  background-color: #f4f4f4;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto; }
+
+h1, h2, h3 {
+  margin: 0;
+  padding: 1em 0; }
+
+/* .btn {
+  display: inline-block;
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  padding: 1em 2em;
+  border: 1px solid #666;
+  margin: .5em 0; }
+
+.btn:hover {
+  background: #d0d0d0;
+  color: #333; } */
+
+/* Header Showcase */
+#showcase {
+  min-height: 450px;
+  color: #fff;
+  text-align: center; }
+
+#showcase .bg-image {
+  position: absolute;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 450px;
+  z-index: -1; }
+
+
+  /*  Stripe example stuff  */
+  /**
+ * The CSS shown here will not be introduced in the Quickstart guide, but shows
+ * how you can use CSS to style your Element's container.
+ */
+.StripeElement {
+  background-color: white;
+  height: 40px;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  /* border-radius: 4px;
+  border: 1px solid transparent; 
+  box-shadow: 0 1px 3px 0 #e6ebf1;*/
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+}
+
+/* .StripeElement--focus {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+} */
+
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+#card-errors {
+  color: #fa755a;
+}

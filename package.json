@@ -1,0 +1,25 @@
+{
+  "name": "ukc4",
+  "version": "1.0.0",
+  "description": "Unknown Child responsive website with Stripe and MongoDB",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "John Patton",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "bootstrap": "4.1.0",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.2.1",
+    "mongoose": "^5.0.17",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "popper.js": "^1.11.1",
+    "stripe": "^5.8.0"
+  }
+}

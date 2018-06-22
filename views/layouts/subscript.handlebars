@@ -1,0 +1,190 @@
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+    const stripe = Stripe('pk_test_DpxhpVZqAwzwrlJKE45Wd54Q');
+    const elements = stripe.elements();
+</script>
+
+<div class="form-container d-flex text-left justify-content-center">
+    <form action="/charge" method="post" id="payment-form" class="needs-validation" novalidate>
+        {{!-- <div class="form-row"> --}}
+        <h4>Payment Form</h4>
+        <div class="form-group">
+            <label for="inputEmail4">Email</label>
+            <input type="email" class="form-control" id="inputEmail4" name="email" placeholder="Email" required>
+            <div class="invalid-feedback">
+                Please enter a vaild email.
+            </div>
+        </div>
+        {{!-- </div> --}}
+        <div class="form-group">
+        <label for="inputName">Name as it appears on the card</label>
+        <input type="text" class="form-control" id="inputName" name="cardName" placeholder="Name on Card" required>
+        <div class="invalid-feedback">
+            Please enter the name as it appears on the card being used.
+        </div>
+        </div>
+        <div class="form-group">
+        <label for="inputAddress">Address</label>
+        <input type="text" class="form-control" id="inputAddress" name="address1" placeholder="1234 Main St" required>
+        <div class="invalid-feedback">
+            Please enter the address your card is billed under.
+        </div>
+        </div>
+        <div class="form-group">
+        <label for="inputAddress2">Address 2</label>
+        <input type="text" class="form-control" id="inputAddress2" name="address2" placeholder="Apartment, studio, or floor">
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputCity">City</label>
+                <input type="text" class="form-control" name="city" id="inputCity" required>
+                <div class="invalid-feedback">
+                    Please enter the address your card is billed under.
+                </div>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputState">State</label>
+                <select id="inputState" class="form-control" name="state" required>
+                <option value="">Choose...</option>
+                <option value="1">...</option>
+                </select>
+                <div class="invalid-feedback">
+                    Please enter the state that matches the address above.
+                </div>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputZip">Zip</label>
+                <input type="text" class="form-control" name="zip" id="inputZip" required>
+                <div class="invalid-feedback">
+                    Please enter the Zip code your card is billed under.
+                </div>
+            </div>
+            <input type="text" name="option" id="option" value={{option}} hidden>
+            <input type="text" name="dntAmount" id="dntAmount" value={{dntAmount}} hidden>
+            <input type="text" name="quantity" id="quantity" value={{quantity}} hidden>
+        </div>
+    
+        <label for="card-element">Credit or debit card</label>
+        <div id="card-element">
+        <!-- A Stripe Element will be inserted here. -->
+        </div>
+    
+        <!-- Used to display form errors. -->
+        <div id="card-errors" role="alert"></div>
+        
+
+        <button class="btn mt-3 btn-primary">Submit Payment</button>
+        
+    </form>
+</div>
+
+
+<script>
+    $(document).ready(function(){
+
+       
+    // Create a Stripe client.
+    const stripe = Stripe('pk_test_DpxhpVZqAwzwrlJKE45Wd54Q');
+
+    // Create an instance of Elements.
+    const elements = stripe.elements();
+
+    // Custom styling can be passed to options when creating an Element.
+    // (Note that this demo uses a wider set of styles than the guide below.)
+    const style = {
+    base: {
+        color: '#32325d',
+        lineHeight: '18px',
+        fontFamily: '"Raleway", Helvetica, sans-serif',
+        fontSmoothing: 'antialiased',
+        fontSize: '16px',
+        '::placeholder': {
+        color: '#aab7c4'
+        }
+    },
+    invalid: {
+        color: '#fa755a',
+        iconColor: '#fa755a'
+    }
+    };
+
+    // Create an instance of the card Element.
+    const card = elements.create('card', {
+        style: style,
+        hidePostalCode: true
+        });
+
+    // Add an instance of the card Element into the `card-element` <div>.
+    card.mount('#card-element');
+
+    // Handle real-time validation errors from the card Element.
+    card.addEventListener('change', function(event) {
+    const displayError = document.getElementById('card-errors');
+    if (event.error) {
+        displayError.textContent = event.error.message;
+    } else {
+        displayError.textContent = '';
+    }
+    });
+
+    // Handle form submission.
+    const form = document.getElementById('payment-form');
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        stripe.createToken(card).then(function(result) {
+            if (result.error) {
+            // Inform the user if there was an error.
+            var errorElement = document.getElementById('card-errors');
+            errorElement.textContent = result.error.message;
+            } else {
+            // Send the token to your server.
+            stripeTokenHandler(result.token);
+            }
+        });
+    });
+
+    const stripeTokenHandler = (token) => {
+    // Insert the token ID into the form so it gets submitted to the server
+    const form = document.getElementById('payment-form');
+    const hiddenInput = document.createElement('input');
+    hiddenInput.setAttribute('type', 'hidden');
+    hiddenInput.setAttribute('name', 'stripeToken');
+    hiddenInput.setAttribute('value', token.id);
+    form.appendChild(hiddenInput);
+
+    // Submit the form
+    form.submit();
+    
+    }
+
+    card.addEventListener('change', ({error}) => {
+    const displayError = document.getElementById('card-errors');
+    if (error) {
+        displayError.textContent = error.message;
+    } else {
+        displayError.textContent = '';
+    }
+    });
+
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+    'use strict';
+    window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+        }, false);
+        });
+    }, false);
+    })();  
+
+});
+</script>

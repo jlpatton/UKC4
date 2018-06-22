@@ -1,0 +1,190 @@
+
+<!-- ACCORDION -->
+    <div id="accordion" role="tablist">
+        <div class="card text-white bg-secondary mb-3">
+            <div class="card-header text-white bg-secondary" role="tab" id="heading1">
+                <h5 class="mb-0"><a href="#collapse1" data-parent="#accordion" data-toggle="collapse">
+                    Place-A-Penny
+                </a></h5>
+            </div>
+
+            <div id="collapse1" class="collapse">
+                <div class="card-body">
+                    <form action="/subscript" method="post" id="payment-form">
+                        <br>
+                        <h3>Place-A-Penny</h3>
+                        <h4>Remembering the Children of the Holocaust</h4>
+                        <h5>Place-a-Penny on the Star of David Memorial walls remembering one child who perished in the Holocaust - $18. The word "chai" means life and has a number value of 18, which is very important in Hebrew culture.</h5>
+                        <br>
+                        <input type="text" name="option" value="penny" hidden>
+                        <input type="text" name="quantity" id="quantity" value="0" hidden>
+                        <h4>Choose a Sponsorship Level</h4>
+                        <div class="btn-group btn-group-toggle colors" data-toggle="buttons">
+                            <button class="btn btn-outline-danger btn-lg" type="button"><input type="radio" name="dntAmount" id="option1" autocomplete="off" amt="-a-Penny" value="18">$18</button>
+                            <button class="btn btn-outline-danger btn-lg" type="button"><input type="radio" name="dntAmount" id="option2" autocomplete="off" amt=" Two Pennies" value="36">$36</button>
+                            <button class="btn btn-outline-danger btn-lg" type="button"><input type="radio" name="dntAmount" id="option3" autocomplete="off" amt=" Three Pennies" value="54">$54</button>
+                            <button class="btn btn-outline-danger btn-lg" type="button"><input type="radio" name="dntAmount" id="option4" autocomplete="off" amt=" Four Pennies" value="72">$72</button>
+                            <button class="btn btn-outline-danger btn-lg" type="button"><input type="radio" name="dntAmount" id="option5" autocomplete="off" amt=" Five Pennies" value="90">$90</button>
+                        </div>
+                        <br><br>
+                        <h5 class="toggleInform" id="dntInform">Place Pennies on the Star of David Memorial Walls</h5>
+                        <p>18 is the numeric value for the word "life." Unknown Child seeks to give voice to the 1.5 million children denied life.</p>
+                        <br>
+                        <button class="btn btn-lg btn-secondary" id="btnDonatePenny" type="submit">Donate {{amt2}}</button>
+                        <br>
+                    </form>
+                </div>
+            </div>
+        </div>
+      
+
+        <div class="card bg-secondary mb-3">
+            <div class="card-header" role="tab" id="heading2">
+                <h5 class="mb-0"><a href="#collapse2" data-parent="#accordion" data-toggle="collapse">
+                    Unknown Child General Fund Donation
+                </a></h5>
+            </div>
+
+            <div id="collapse2" class="collapse">
+                <div class="card-body">
+                    <form action="/subscript" method="post" id="payment-form">
+                        <h3>General Fund</h3>
+                        <h4>Giving voice to the Children of the Holocaust</h4>
+                        <br>
+                        <h4>Choose Your Donation Frequency</h4>
+                        <div class="btn-group btn-group-toggle freq" data-toggle="buttons">
+                            <label class="btn btn-outline-danger btn-md" type="button"><input type="radio" name="option" id="once" autocomplete="off" value="once" required>One Time</label>
+                            <label class="btn btn-outline-danger btn-md" type="button"><input type="radio" name="option" id="monthly" autocomplete="off" value="monthly" required>Monthly</label>
+                            <label class="btn btn-outline-danger btn-md" type="button"><input type="radio" name="option" id="quarterly" autocomplete="off" value="quarterly" required>Quarterly</label>
+                            <label class="btn btn-outline-danger btn-md" type="button"><input type="radio" name="option" id="annually" autocomplete="off" value="annually" required>Annually</label>
+                        </div>
+                        <br><br>
+
+                        <h4>Choose a Donation Level</h4>
+                        <div class="btn-group btn-group-toggle donations" id="once" data-toggle="buttons">
+                            <label class="btn btn-outline-danger btn-lg" type="button"><input type="radio" name="amount1" id="radio1" value="2500">$25</label>
+                            <label class="btn btn-outline-danger btn-lg" type="button"><input type="radio" name="amount1" id="radio2" value="5000">$50</label>
+                            <label class="btn btn-outline-danger btn-lg" type="button"><input type="radio" name="amount1" id="radio3" value="10000">$100</label>
+                            <label class="btn btn-outline-danger btn-lg" type="button"><input type="radio" name="amount1" id="radio4" value="25000">$250</label>
+                            <label class="btn btn-outline-danger btn-lg" type="button"><input type="radio" name="amount1" id="radio5" value="50000">$500</label>
+                            <label class="btn btn-outline-danger btn-lg" type="button"><input type="radio" name="amount1" id="radio6" value="100000">$1000</label>
+                        </div>
+                        <div class="btn-group btn-group-toggle donations hideit" id="monthly" data-toggle="buttons">
+                            <label class="btn btn-outline-danger btn-lg" type="button"><input type="radio" name="amount2" id="radio1" value="1">$5</label>
+                            <label class="btn btn-outline-danger btn-lg" type="button"><input type="radio" name="amount2" id="radio2" value="2">$10</label>
+                            <label class="btn btn-outline-danger btn-lg" type="button"><input type="radio" name="amount2" id="radio3" value="5">$25</label>
+                            <label class="btn btn-outline-danger btn-lg" type="button"><input type="radio" name="amount2" id="radio4" value="10">$50</label>
+                            <label class="btn btn-outline-danger btn-lg" type="button"><input type="radio" name="amount2" id="radio5" value="20">$100</label>
+                            <label class="btn btn-outline-danger btn-lg" type="button"><input type="radio" name="amount2" id="radio6" value="50">$250</label>
+                        </div>
+                        <div class="btn-group btn-group-toggle donations hideit" id="quarterly" data-toggle="buttons">
+                            <label class="btn btn-outline-danger btn-lg" type="button"><input type="radio" name="amount3" id="radio1" value="1">$15</label>
+                            <label class="btn btn-outline-danger btn-lg" type="button"><input type="radio" name="amount3" id="radio2" value="2">$30</label>
+                            <label class="btn btn-outline-danger btn-lg" type="button"><input type="radio" name="amount3" id="radio3" value="5">$75</label>
+                            <label class="btn btn-outline-danger btn-lg" type="button"><input type="radio" name="amount3" id="radio4" value="10">$150</label>
+                            <label class="btn btn-outline-danger btn-lg" type="button"><input type="radio" name="amount3" id="radio5" value="20">$300</label>
+                            <label class="btn btn-outline-danger btn-lg" type="button"><input type="radio" name="amount3" id="radio6" value="50">$750</label>
+                        </div>
+                        <div class="btn-group btn-group-toggle donations hideit" id="annually" data-toggle="buttons">
+                            <label class="btn btn-outline-danger btn-lg" type="button"><input type="radio" name="amount4" id="radio1" value="1">$60</label>
+                            <label class="btn btn-outline-danger btn-lg" type="button"><input type="radio" name="amount4" id="radio2" value="2">$120</label>
+                            <label class="btn btn-outline-danger btn-lg" type="button"><input type="radio" name="amount4" id="radio3" value="5">$300</label>
+                            <label class="btn btn-outline-danger btn-lg" type="button"><input type="radio" name="amount4" id="radio4" value="10">$600</label>
+                            <label class="btn btn-outline-danger btn-lg" type="button"><input type="radio" name="amount4" id="radio5" value="20">$1200</label>
+                            <label class="btn btn-outline-danger btn-lg" type="button"><input type="radio" name="amount4" id="radio6" value="50">$3000</label>
+                        </div>
+                        <br><br>
+                        <h5 id="dntInform">Or enter your own amount:</h5>
+                        <input type="text" name="quantity" id="quantity" value="0" hidden>
+                        <div class="row justify-content-center">
+                            <div class="col-xs-4">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" class="form-control" id="dntGeneral" name="dntAmount">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">.00</span>
+                                        <button class="btn btn-danger" id="btnDonateGeneral" type="submit">Donate</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                        
+                </div>
+                
+            </div>
+        </div>
+    </div>
+  
+    <script>
+        $(document).ready(function(){
+
+            $('#dntGeneral').val("");
+            $('#dntGeneral').value="";
+            
+            $('.colors input[type=radio]').on('change', function() {
+                const amt1 = this.value;
+                const amt2 = this.getAttribute('amt');
+                $('#btnDonatePenny').text('Donate $' + amt1.toString());
+                $('#dntInform').text('Place' + amt2 + ' on the Star of David Memorial Walls ($' + amt1 + ')');
+                $('#dntInform').removeClass("toggleInform");
+            });
+
+        });
+
+        $(document).ready(function(){
+
+            $.each($('.donations input[type=radio]'), function (index, value) { 
+                value.required=true;
+            });
+
+            $('.freq input[type=radio]').on('change', function() {
+                
+                const st = $(this).attr("id");
+
+                const obj = $('.donations#'+st+' input[type=radio]');
+
+                $('div.donations').hide();
+                $.each($('.donations input[type=radio]'), function (index, value) { 
+                   value.required=false;
+                });
+                $('div#'+st).show();
+                $.each($('.donations#' +st+ ' input[type=radio]'), function (index, value) { 
+                   value.required=true;
+                });
+
+                
+                $('#dntGeneral').val("");
+                $('#dntGeneral').value="";
+                $('#quantity').value="";
+
+            });
+
+        });
+
+        $(document).ready(function(){
+            
+            $('.donations input[type=radio]').on('change', function() {
+
+                const amt1 = this.parentElement.innerText.substr(1, 6);
+                const amt2 = this.value;
+                $('#dntGeneral').val(amt1);
+                $('#dntGeneral').value=amt2;
+                $('#quantity').val(amt2);
+                $('#quantity').value=amt2;
+
+            });
+
+
+            form.addEventListener('submit', function(event) {
+                
+            }, false);
+        });
+
+    </script>
+  
+  {{!-- <div style="margin-top:500px;"></div> --}}
+
+  
